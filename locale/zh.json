@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "OpeniLink 微信通道",
+    "description": "通过 OpeniLink Hub 让微信用户与本地 DeepSeek Harness Agent 对话：收消息、发回复、推送图片。"
+  }
+}

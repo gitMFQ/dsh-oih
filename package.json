@@ -1,0 +1,62 @@
+{
+  "name": "dsh-openilink-channel",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpeniLink Hub 微信 Bot 通道插件：让 DeepSeek Harness Agent 通过 OpeniLink Hub 收发微信消息",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "openilink",
+    "wechat"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitMFQ/dsh-oih.git"
+  },
+  "homepage": "https://github.com/gitMFQ/dsh-oih#readme",
+  "bugs": {
+    "url": "https://github.com/gitMFQ/dsh-oih/issues"
+  },
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "docs",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/schemastery": {
+      "optional": false
+    }
+  }
+}

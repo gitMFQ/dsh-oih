@@ -1,0 +1,32 @@
+# dsh-openilink-channel bundle patch
+#
+# 安装（在 profile 中）后由 dsh 启动时自动加载本 patch，插入 im-openilink 插件行。
+#
+# 凭据有两种来源（二选一）：
+#   1. 本行 config 的 hubUrl / appToken（可在设置 → OpeniLink 微信 页面填写并保存，
+#      保存会写回 profile 的 cordis.patch.yml 并触发热重载）；
+#   2. 环境变量 OPENILINK_HUB_URL / OPENILINK_APP_TOKEN。
+#
+# 其余字段留默认值即可；agentPreset 为空表示沿用宿主组合（与网页新会话一致）。
+- insert:
+    - id: im-openilink
+      name: dsh-openilink-channel
+      config:
+        hubUrl: ''
+        appToken: ''
+        cwd: ''
+        agentPreset: ''
+        provider: ''
+        model: ''
+        reasoningEffort: ''
+        textChunkLimit: 4000
+        sessionIdleMinutes: 30
+        showReasoning: true
+        showTools: true
+        access:
+          mode: open
+          allow: []
+        media:
+          enabled: true
+          maxMB: 30
+        debug: false
